@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="./js/Rotation.js"></script>
+</head>
+<body>
+    
+  <a-scene>
+
+    <a-assets>
+      <a-asset-item id="Home" src="assets/small_diorama_with_flying_pink_whale/scene.gltf"></a-asset-item>
+      <a-asset-item id="turtle" src="assets/turtle/scene.gltf"></a-asset-item>        
+      <a-asset-item id="captain" src="assets/whale_captain/scene.gltf"></a-asset-item>
+      <a-asset-item id="statue" src="assets/underwater_ruin/scene.gltf"></a-asset-item>
+      <a-asset-item id="garden" src="assets/underwater_scene/scene.gltf"></a-asset-item>
+      <a-asset-item id="shark" src="assets/shark/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-sky
+    geometry="primitive: sphere;" material="shader: gradient; bottomColor: #00009e; topColor:109 205 227; offset: 0.0001;"
+    radius="100" theta-length="180" side="double" animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000">
+  <a-entity gltf-model="#Home" scale="20 20 20" position="0 -15 -40"></a-entity>
+</a-sky>
+
+
+    <a-entity gltf-model="#turtle"scale="0.01 0.01 0.01" position="-20 0 28" rotation="0 180 -25" ></a-entity>
+    <a-entity gltf-model="#turtle"scale="0.005 0.005 0.005" position="-20 -2 28" rotation="0 -180 -25" ></a-entity>
+    <a-entity gltf-model="#turtle"scale="0.005 0.005 0.005" position="-26 -3 28" rotation="0 -180 -25" ></a-entity>
+
+    <a-entity gltf-model="#captain"scale="3 3 3" position="17 5 15" rotation="0 90 -15"diver-rotation-reader></a-entity>
+
+    <a-entity gltf-model="#statue"scale="0.03 0.03 0.03" position="47.5 5 30" rotation="0 90 0"></a-entity>
+
+    <a-entity gltf-model="#garden"scale="0.03 0.03 0.03" position="-35 0 40" rotation="0 90 0"></a-entity>
+
+    <a-entity gltf-model="#shark"scale="5 5 5" position="0 5 85" rotation="0 -160 0"></a-entity>
+    <a-entity gltf-model="#shark"scale="5 5 5" position="-30 5 85" rotation="5 -160 0"></a-entity>
+    <a-entity gltf-model="#shark"scale="5 5 5" position="30 5 85" rotation="-10 -160 0"></a-entity>
+
+
+  <a-sphere id="bubble" position="53 120 -50"radius="1"color="#b2ebf2"animation="property: position; to: 52.9829 300 -49.38121;easing:linear; loop: true; dur: 2000"></a-sphere></a-entity>
+  <a-cylinder color="#00009e" radius="100" opacity="0.2"></a-cylinder>
+
+  <a-entity camera="active: true"look-controls position="0 5 40"></a-entity>
+   
+</a-scene>
+</body>
+</html>
